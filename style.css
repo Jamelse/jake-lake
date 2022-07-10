@@ -99,3 +99,7 @@ section #text span {
     color: white;
     margin-bottom: 10px;
 }
+.sec p {
+    font-size: 1em;
+    color: white;
+}
