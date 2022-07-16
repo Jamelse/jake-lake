@@ -53,16 +53,31 @@ header ul li {
 
 }
 header ul li a {
+    position: relative;
     text-decoration: none;
     padding: 6px 15px;
     color: #3586ff;
     border-radius: 20px;
 }
-header ul li a:hover/*, header ul li a.active*/
-{
-    background: #3586ff;
-    color:#ffff;
+header ul li a::after{
+    content: "";
+    position: absolute;
+    color: #ffff;
+    background-color: #3586FF;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
 
+}
+header ul li a:hover, header ul li a.active {
+    color:#ffff;
+}
+header ul li a:hover:after
+{
+    width: 100%;
+    
 }
 /*.menu-toggle {
     display: none;
@@ -120,6 +135,7 @@ section img#rocks {
     height: 100%;
     object-fit: cover;
     pointer-events: none;
+    filter: saturate(0%);
 
 }
 section img#forest {
@@ -130,6 +146,7 @@ section img#forest {
     height: 100%;
     object-fit: cover;
     pointer-events: none;
+    filter: saturate(40%);
 
 }
 section #text {
@@ -156,7 +173,7 @@ section #text span {
         text-decoration: none;
         display: inline-block;
         padding: 8px 30px;
-        background: white;
+        background: #262626;
         color: #3586ff;
         font-size: 1.2em;
         font-weight: 500;
@@ -164,6 +181,9 @@ section #text span {
         border-radius: 40px;
         transform: translateY(100px);
     
+}
+#btn:hover {
+    color: #ffff;
 }
 footer {
     position: relative;
