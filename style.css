@@ -248,7 +248,7 @@ footer .wave#wave4 {
 .sec {
     position: relative;
     padding: 100px;
-    background: #3586FF;
+    background: linear-gradient(#3586FF, #2357A6);
 }
 .sec h2 {
     font-size: 3.5em;
@@ -256,6 +256,36 @@ footer .wave#wave4 {
     margin-bottom: 10px;
 }
 .sec p {
+    font-size: 1em;
+    color: white;
+}
+.sec2 {
+    position: relative;
+    min-height: 200px;
+    padding: 100px;
+    background: linear-gradient(#2357A6, #153566);
+}
+.sec2 h2 {
+    font-size: 3.5em;
+    color: white;
+    margin-bottom: 10px;
+}
+.sec2 p {
+    font-size: 1em;
+    color: white;
+}
+.sec3 {
+    position: relative;
+    min-height: 200px;
+    padding: 100px;
+    background: linear-gradient(#153566, #0B1B34);
+}
+.sec3 h2 {
+    font-size: 3.5em;
+    color: white;
+    margin-bottom: 10px;
+}
+.sec3 p {
     font-size: 1em;
     color: white;
 }
