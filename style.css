@@ -1,34 +1,37 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital@1&display=swap');
 *
+
 {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 body {
    min-height: 100vh;
-    background-color: white;
+    background: linear-gradient(#87CEEB, #fff);
 }
 header {
-    position: absolute;
+   position: sticky;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 30px 100px;
+    padding: 20px 100px;
+    background: #262626;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 10000;
 }
 header .logo img {
+    display: block;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 120px;
-    height: 120px;
-    border-radius: 20px;
+    top: -220%;
+    left: -7%;
+    width: 350px;
+    height: 350px;
     object-fit: cover;
     /* color: #018791;
     font-weight: 700;
@@ -52,15 +55,34 @@ header ul li {
 header ul li a {
     text-decoration: none;
     padding: 6px 15px;
-    color: #018791;
+    color: #3586ff;
     border-radius: 20px;
 }
-header ul li a:hover, header ul li a.active 
+header ul li a:hover/*, header ul li a.active*/
 {
-    background: #018791;
+    background: #3586ff;
     color:#ffff;
 
 }
+/*.menu-toggle {
+    display: none;
+    color: #fff;
+    float: right;
+    cursor: pointer;
+    font-size: 24px;
+    object-fit: cover;
+}
+@media (max-width: 991px) {
+    header {
+        padding: 0 20px;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    header ul li a {
+        display: none;
+    }
+}*/
 section {
     position: relative;
     width: 100%;
@@ -77,12 +99,32 @@ section::before{
     left: 0;
     width: 100%;
     height: 100px;
-    background: linear-gradient(to top, #018791, transparent);
+    background: linear-gradient(to top, #3586FF, transparent);
     z-index: 10;
 }
 section img {
     position: absolute;
-    top: 0;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+
+}
+section img#rocks {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+
+}
+section img#forest {
+    position: absolute;
+    top: 10%;
     left: 0;
     width: 100%;
     height: 100%;
@@ -92,12 +134,17 @@ section img {
 }
 section #text {
     position: absolute;
-    color: #018791;
+    color: #3586ff;
     font-size: 10vw;
     text-align: center;
     line-height: 0.55em;
     font-family: 'Gentium Book Plus', serif;
     transform: translateY(-50%);
+    border-radius: 50%;
+    text-shadow: 0 0 0 2px#fff9,
+    0 0 0 20px #333,
+    0 0 0 22px #fff,
+    0 0 50px #fff;
 }
 section #text span {
     font-size: 0.20em;
@@ -110,7 +157,7 @@ section #text span {
         display: inline-block;
         padding: 8px 30px;
         background: white;
-        color: #018791;
+        color: #3586ff;
         font-size: 1.2em;
         font-weight: 500;
         letter-spacing: 2px;
@@ -118,10 +165,70 @@ section #text span {
         transform: translateY(100px);
     
 }
+footer {
+    position: relative;
+    width: 100%;
+    background: #3586ff;
+    min-height: 200px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .wave {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(./images/wave.png);
+    background-size: 1000px 100px;
+}
+footer .wave#wave1 {
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWave 4s linear infinite;
+}
+footer .wave#wave2 {
+    z-index: 999;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animateWave_02 4s linear infinite;
+}
+
+footer .wave#wave3 {
+    z-index: 1000;
+    opacity: 0.2;
+    bottom: 15;
+    animation: animateWave 3s linear infinite;
+}
+footer .wave#wave4 {
+    z-index: 999;
+    opacity: 0.7;
+    bottom: 20px;
+    animation: animateWave_02 3s linear infinite;
+}
+@keyframes animateWave {
+    0% {
+        background-position-x: 1000px;
+    }
+    100% {
+        background-position-x: 0px;
+    }
+}
+@keyframes animateWave_02 {
+    0% {
+        background-position-x: 0px;
+    }
+    100% {
+        background-position-x: 1000px;
+    }
+}
 .sec {
     position: relative;
     padding: 100px;
-    background: #018791;
+    background: #3586FF;
 }
 .sec h2 {
     font-size: 3.5em;
